@@ -1,4 +1,7 @@
-# id решения в Яндекс Контесте 85312705
+# id решения в Яндекс Контесте 85392657
+
+from collections import Counter
+
 
 def input_data():
     k = int(input()) * 2
@@ -8,16 +11,11 @@ def input_data():
 
 def get_max_score():
     k, matrix = input_data()
-    numbers = []
-
-    for i in range(1, 10):
-        count = matrix.count(str(i))
-        numbers.append(count)
-
     count = 0
+    numbers_dict = Counter(matrix)
 
-    for j, value in enumerate(numbers):
-        if value != 0 and value <= k:
+    for key, val in numbers_dict.items():
+        if key in '123456789' and val <= k:
             count += 1
 
     print(count)
