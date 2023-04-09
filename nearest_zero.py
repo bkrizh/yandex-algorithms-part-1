@@ -2,7 +2,7 @@
 
 def input_data():
     length_street = int(input())
-    street = [int(num) for num in input().split(' ')]
+    street = [0] * length_street
     return length_street, street
 
 

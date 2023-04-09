@@ -1,21 +1,23 @@
-# id решения в Яндекс Контесте 85392657
-
-from collections import Counter
-
+# id решения в Яндекс Контесте 85460617
 
 def input_data():
     k = int(input()) * 2
-    matrix = list((''.join([input() for i in range(4)])).replace('.', '0'))
+    matrix = list((''.join([input() for _ in range(4)])).replace('.', ''))
     return k, matrix
 
 
 def get_max_score():
     k, matrix = input_data()
     count = 0
-    numbers_dict = Counter(matrix)
+    key = set(matrix)
+    numbers_dict = dict.fromkeys(key, 0)
+    print(numbers_dict)
+
+    for elem in matrix:
+        numbers_dict[elem] += 1
 
     for key, val in numbers_dict.items():
-        if key in '123456789' and val <= k:
+        if val <= k:
             count += 1
 
     print(count)
