@@ -11,7 +11,6 @@ def get_max_score():
     count = 0
     key = set(matrix)
     numbers_dict = dict.fromkeys(key, 0)
-    print(numbers_dict)
 
     for elem in matrix:
         numbers_dict[elem] += 1
